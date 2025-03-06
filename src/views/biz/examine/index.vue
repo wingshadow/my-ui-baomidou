@@ -33,10 +33,10 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="出生日期;yyyy-mm-dd" prop="birthday">
+      <el-form-item label="出生日期" prop="birthday">
         <el-input
           v-model="queryParams.birthday"
-          placeholder="请输入出生日期;yyyy-mm-dd"
+          placeholder="请输入出生日期"
           clearable
           @keyup.enter.native="handleQuery"
         />
@@ -133,7 +133,7 @@
       <el-table-column label="性别" align="center" prop="gender" />
       <el-table-column label="证件类型" align="center" prop="cardType" />
       <el-table-column label="证件号码" align="center" prop="idCard" />
-      <el-table-column label="出生日期;yyyy-mm-dd" align="center" prop="birthday" />
+      <el-table-column label="出生日期" align="center" prop="birthday" />
       <el-table-column label="最高学历" align="center" prop="education" />
       <el-table-column label="通信地址" align="center" prop="address" />
       <el-table-column label="所属公司" align="center" prop="company" />
@@ -187,7 +187,7 @@
           <el-input v-model="form.idCard" placeholder="请输入证件号码" />
         </el-form-item>
         <el-form-item label="出生日期;yyyy-mm-dd" prop="birthday">
-          <el-input v-model="form.birthday" placeholder="请输入出生日期;yyyy-mm-dd" />
+          <el-input v-model="form.birthday" placeholder="请输入出生日期" />
         </el-form-item>
         <el-form-item label="最高学历" prop="education">
           <el-input v-model="form.education" placeholder="请输入最高学历" />
@@ -309,7 +309,7 @@ export default {
     getList() {
       this.loading = true;
       listExamine(this.queryParams).then(response => {
-        this.examineList = response.data.rows;
+        this.examineList = response.data.list;
         this.total = response.data.total;
         this.loading = false;
       });
